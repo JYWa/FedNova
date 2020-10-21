@@ -147,15 +147,3 @@ class FedProx(Optimizer):
                 # Reinitialize momentum buffer
                 if 'momentum_buffer' in param_state:
                     param_state['momentum_buffer'].zero_()
-
-
-
-
-
-
-
-
-
-
-
-

@@ -212,15 +212,3 @@ class FedNova(Optimizer):
         self.local_counter = 0
         self.local_normalizing_vec = 0
         self.local_steps = 0
-
-
-
-
-
-
-
-
-
-
-
-

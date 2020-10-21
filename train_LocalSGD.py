@@ -105,6 +105,14 @@ parser.add_argument('--mu',
                     default=0, 
                     type=float, 
                     help='mu parameter in fedprox')
+parser.add_argument('--savepath',
+                    default='./results/',
+                    type=str,
+                    help='directory to save exp results')
+parser.add_argument('--datapath',
+                    default='./data/',
+                    type=str,
+                    help='directory to load data')
 
 
 logging.basicConfig(format='%(levelname)s - %(message)s', level=logging.INFO)
@@ -113,7 +121,7 @@ args = parser.parse_args()
 
 def run(rank, size):
     # initiate experiments folder
-    save_path = '/users/jianyuw1/FedNova/results/'
+    save_path = args.savepath
     folder_name = save_path+args.name
     if rank == 0 and os.path.isdir(folder_name)==False and args.save:
         os.mkdir(folder_name)
@@ -316,4 +324,3 @@ if __name__ == "__main__":
     size = args.size
     print(rank)
     init_processes(rank, size, run)
-

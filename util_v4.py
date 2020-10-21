@@ -172,7 +172,7 @@ def partition_dataset(rank, size, args):
         transforms.ToTensor(),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
-    trainset = torchvision.datasets.CIFAR10(root='/users/jianyuw1/AdaDSGD/data', 
+    trainset = torchvision.datasets.CIFAR10(root=args.datapath, 
                                             train=True, 
                                             download=True, 
                                             transform=transform_train)
@@ -191,7 +191,7 @@ def partition_dataset(rank, size, args):
         transforms.ToTensor(),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
-    testset = torchvision.datasets.CIFAR10(root='/users/jianyuw1/AdaDSGD/data', 
+    testset = torchvision.datasets.CIFAR10(root=args.datapath, 
                                         train=False, 
                                         download=True, 
                                         transform=transform_test)
